@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EZH2 mutation prediction</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- <script src = "node_modules/clientside-require/dist/bundle.js"></script> -->
+    <!--<script data-main="javascript/ml" src="javascript/require.js"></script> -->
+  </head>
+  <body>

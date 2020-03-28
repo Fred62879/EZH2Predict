@@ -1,0 +1,15 @@
+<%- include ("partials/header") %>
+
+<div class="container"> 
+  <form action="/ml" method="POST">
+    <button>Submit</button>
+    <% if (data !== null) { %>
+    <p><%= data.name %></p>
+    <p><%= data.accuracy %></p>
+    <% } %>
+  </form>
+</div>
+
+
+<%- include ("partials/footer") %>
+
