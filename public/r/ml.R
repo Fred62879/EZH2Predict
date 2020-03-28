@@ -1,5 +1,6 @@
 load(file = "./public/r/exp.Rda");
 load(file = "./public/r/meta.Rda");
+print(getwd())
 
 picklimma <- function(expr, factor, p, fc) {
 	library(limma)
