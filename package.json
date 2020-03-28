@@ -1,23 +1,21 @@
 {
-  "name": "ui",
-  "version": "1.0.0",
-  "description": "Machine learning ui",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "beefy": "^2.1.8",
-    "body-parser": "^1.19.0",
-    "browserify": "^16.5.0",
-    "child-process": "^1.0.2",
-    "clientside-require": "^4.7.2",
-    "ejs": "^3.0.1",
-    "express": "^4.17.1",
-    "jquery": "^3.4.1",
-    "jsdom": "^16.2.1",
-    "r-script": "0.0.4"
-  }
+    "name": "ui",
+    "version": "1.0.0",
+    "description": "Machine learning ui",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node app.js"
+
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "ejs": "^3.0.1",
+        "express": "^4.17.1",
+        "jquery": "^3.4.1",
+        "jsdom": "^16.2.1",
+        "r-script": "0.0.4"
+    }
 }
