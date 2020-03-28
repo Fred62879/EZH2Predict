@@ -60,7 +60,7 @@ app.post('/ml', (req, res) => {
     var r = R('./public/r/ml.R')
         .callSync()
     // res.json(r);
-    console.log(r[0]);
+    // console.log(r[0]);
 
     data = { name: "test", accuracy: r };
     res.redirect('/ml');
