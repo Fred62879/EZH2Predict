@@ -57,12 +57,9 @@ app.post('/ml', (req, res) => {
     console.log(2);
     var r = R('./public/r/ml.R')
         .callSync()
-    console.log(3);
     // res.json(r);
     // console.log(r[0]);
-    console.log(4);
     data = { name: "test", accuracy: r };
-    console.log(5);
     res.redirect('/ml');
 });
 
