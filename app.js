@@ -19,6 +19,7 @@ var data = [];
 app.get('/', (req, res) => res.redirect('/ml'));
 
 app.get('/test', (req, res) => {
+    data = [];
     res.render('index.ejs', { data:data });
 });
 
@@ -26,9 +27,19 @@ app.get('/ml', (req, res) => {
     res.render('index.ejs', { data: data});
 });
 
+app.get('/biobg', (req, res) => {
+    res.render('bio.ejs', { data: data});
+});
+
+app.get('/compbg', (req, res) => {
+    res.render('comp.ejs', { data: data});
+});
+
 app.post('/ml', (req, res) => {
     const n = req.body.n;
     const m = req.body.m;
+
+
     var r = R(__dirname + '/ml.R').
         data(n, m).
         callSync()

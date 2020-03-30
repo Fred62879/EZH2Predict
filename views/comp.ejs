@@ -1,0 +1,19 @@
+<%- include ("partials/header") %>
+
+<div class="jumbotron">
+  <p>
+    We would perform machine learning over the expression data of 400+ candidate genes across 20,000+ patients. If the postulated pathways do exist, the classifier would be able to learn patterns characterizing such pathways. When gene expression data from novel patients are given, the classifier can then give predictions whether such pathways exist in the patient and thus whether or not EZH2 mutation would be developed.
+  </p>  
+  <p>
+    The machine learning classifier we trained is called random forest. The algorithm for a random forest involves sampling cases and variables to create a large number of decision trees. Each case is classified by each decision tree. The most common classification for that case is then used as the outcome.
+  </p>
+  <p>
+    Basically, each time, from the set of genes, we select the most important <strong>m</strong> genes. As learning variables.
+  </p>
+  <p>
+    And as we are performing a leave-one-out machine learning procedure, we need to divide the patients into <strong>n</strong> groups. Each time, we use expression data from one of the group as testing data against the model trained based on that of the other nine groups.
+  </p>
+</div>
+
+
+<%- include ("partials/footer") %>

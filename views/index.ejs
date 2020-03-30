@@ -1,11 +1,17 @@
 <%- include ("partials/header") %>
-
-<div class="jumbotron">
-  <div class="container">
+<div class="column">
+  <div class="jumbotron">
     <h1>EZH2 mutation status predictior</h1>
     <p>
-      We are training the randomForest machine learning classifier to predict the EZH2 mutation status of DLBCL patients (for more background info about this disease, the mutation, and the machine learning classifier please check the <strong>Background Info</strong> tag.
+      We are training the randomForest machine learning classifier to predict the EZH2 mutation status of DLBCL patients (for more background info please check the <strong>Background</strong> tags. Please input:
+    <p>
+      <strong>n</strong> - the number of subsets the whole dataset is divided into
     </p>
+    <p>
+      <strong>m</strong> - the number of genes that will be used to train the machine learning classifier each time.
+    </p>
+    
+    <div class="jumbotron">
     <div style="float: left; width: 30%; margin: 15px;">
       <form action="/ml" method="POST">
         <div class="form-group">
@@ -19,12 +25,15 @@
         </div>
       </form>
     </div>
+    </div>
 
+    <div class="jumbotron">
     <div style="float: right; width: 30%; margin: 15px;">
       <h4>Accuracy of the models </h4>
         <% data.forEach((cur) => { %>
           <p><%= cur %></p>
         <% }); %>
+    </div>
     </div>
     
   </div>
