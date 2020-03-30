@@ -14,33 +14,7 @@ var $ = require("jquery")(window);
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
-// function ml() {
-//     var child_process = require('child_process');
-//     var file_path = 'r/mlscript.R';
-//     var r_comm = '/usr/bin/Rscript';
-//     var rspawn = child_process.spawn(r_comm, [file_path]);
-//     // var rspawn = spawn(r_comm, [file_path]);
-
-//     rspawn.stdout.on('data', function (data) {
-// 	    console.log(data.toString());
-//     });
-
-//     rspawn.stderr.on('data', function (data) {
-// 	    console.log('stderr: ' + data);
-// 	    console.log(data.toString().search("error"));
-// 	    console.log(rspawn.connected);
-// 	    if ((data.toString().search("error") != -1) ) {
-// 		    console.log('process has been killed - "error" keyword found in stderr!');
-// 		    rspawn.kill('SIGTERM');
-// 	    }
-//     });
-
-//     rspawn.on('close', function (code) {
-// 	    console.log('child process exited with code ' + code);
-//     });
-// }
-
-var data = null;
+var data = [];
 
 app.get('/', (req, res) => res.redirect('/ml'));
 
@@ -49,23 +23,19 @@ app.get('/test', (req, res) => {
 });
 
 app.get('/ml', (req, res) => {
-    res.render('index.ejs', {data:data});
+    res.render('index.ejs', { data: data});
 });
 
 app.post('/ml', (req, res) => {
-    const a = req.params.a;
-    // console.log(process.cwd());
-    // console.log(__dirname);
+    const n = req.body.n;
+    const m = req.body.m;
+    var r = R(__dirname + '/ml.R').
+        data(n, m).
+        callSync()
+    for (var i = 0; i < r.length; i++)
+        data.push(r[i]);
 
-    /*
-    fs.readFile(__dirname + '/ml.R', (err, data) => {
-        if (err) throw err;
-        console.log(data.toString());
-    })
-    */
-    var r = R(__dirname + '/ml.R').callSync()
-    // res.json(r);
-    data = { name: "test", accuracy: r };
+    console.log(data);
     res.redirect('/ml');
 });
 
