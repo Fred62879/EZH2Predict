@@ -1,7 +1,7 @@
 print(getwd())
 
-dtlim1 = readRDS('dtlim1.rds');
-dtpid = readRDS('dtpid.rds');
+dtlim1 = readRDS('/app/dtlim1.rds');
+dtpid = readRDS('/app/dtpid.rds');
 
 pred<-list()
 result<-list()
