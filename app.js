@@ -54,13 +54,13 @@ app.get('/ml', (req, res) => {
 app.post('/ml', (req, res) => {
     console.log(1);
     const a = req.params.a;
-    console.log(2);
+    console.log(process.cwd());
     // var r = R('./public/r/ml.R')
-    var r = R('ml.R')
-        .callSync()
+    // var r = R('./ml.R')
+    //    .callSync()
     // res.json(r);
     // console.log(r[0]);
-    data = { name: "test", accuracy: r };
+    // data = { name: "test", accuracy: r };
     res.redirect('/ml');
 });
 
