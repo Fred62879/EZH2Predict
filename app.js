@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const R = require("r-script");
 const bodyParser = require("body-parser");
+const fs = require('fs');
 
 var jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -52,15 +53,22 @@ app.get('/ml', (req, res) => {
 });
 
 app.post('/ml', (req, res) => {
-    console.log(1);
     const a = req.params.a;
-    console.log(process.cwd());
+    // console.log(process.cwd());
+    console.log(__dirname);
+
+    fs.readFile(__dirname + '/ml.R', (err, data) => {
+        if (err) throw err;
+        console.log(data.toString());
+    })
+
     // var r = R('./public/r/ml.R')
     // var r = R('./ml.R')
-    //    .callSync()
+    var r = R(__dirname + '/ml.R')
+        .callSync()
     // res.json(r);
     // console.log(r[0]);
-    // data = { name: "test", accuracy: r };
+    data = { name: "test", accuracy: r };
     res.redirect('/ml');
 });
 
