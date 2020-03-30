@@ -1,3 +1,6 @@
+source("http://www.bioconductor.org/biocLite.R")
+biocLite("limma")
+
 # load(file = "./public/r/exp.Rda");
 # load(file = "./public/r/meta.Rda");
 
