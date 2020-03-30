@@ -56,7 +56,7 @@ app.post('/ml', (req, res) => {
     const a = req.params.a;
     console.log(2);
     // var r = R('./public/r/ml.R')
-    var r = R('./ml.R')
+    var r = R('ml.R')
         .callSync()
     // res.json(r);
     // console.log(r[0]);
