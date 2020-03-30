@@ -55,19 +55,16 @@ app.get('/ml', (req, res) => {
 app.post('/ml', (req, res) => {
     const a = req.params.a;
     // console.log(process.cwd());
-    console.log(__dirname);
+    // console.log(__dirname);
 
+    /*
     fs.readFile(__dirname + '/ml.R', (err, data) => {
         if (err) throw err;
         console.log(data.toString());
     })
-
-    // var r = R('./public/r/ml.R')
-    // var r = R('./ml.R')
-    var r = R(__dirname + '/ml.R')
-        .callSync()
+    */
+    var r = R(__dirname + '/ml.R').callSync()
     // res.json(r);
-    // console.log(r[0]);
     data = { name: "test", accuracy: r };
     res.redirect('/ml');
 });

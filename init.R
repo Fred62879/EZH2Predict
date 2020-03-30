@@ -1,4 +1,4 @@
-my_packages <- c("limma", "randomForest", "plyr")
+my_packages <- c("randomForest", "plyr")
  install_if_missing <- function(p) {
  if(p %in% rownames(installed.packages())==FALSE){
  install.packages(p)}
