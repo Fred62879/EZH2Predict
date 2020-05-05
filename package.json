@@ -6,17 +6,18 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node app.js"
-
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
         "body-parser": "^1.19.0",
+        "bull": "^3.13.0",
         "child-process": "^1.0.2",
         "ejs": "^3.0.1",
         "express": "^4.17.1",
         "jquery": "^3.4.1",
         "jsdom": "^16.2.1",
-        "r-script": "0.0.4"
+        "r-script": "0.0.4",
+        "redis": "^3.0.2"
     }
 }
